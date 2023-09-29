@@ -11,13 +11,12 @@ import {
   HStack,
   Heading,
   Icon,
-  LinkBox,
-  LinkOverlay,
   Text,
   VStack,
 } from '@chakra-ui/react';
 import { MainButton } from '@twa-dev/sdk/react';
 import { IoChevronForward } from 'react-icons/io5';
+import { Link } from 'react-router-dom';
 
 const styles = {
   main: css`
@@ -42,7 +41,7 @@ function onClick() {
   Twa.showAlert('Hello, world!');
 }
 
-function App() {
+export function Root() {
   useEffect(() => {
     Twa.ready();
   }, []);
@@ -51,18 +50,16 @@ function App() {
     <main>
       <Container pt={4}>
         <VStack spacing={4} alignItems="stretch">
-          <LinkBox>
+          <Link to="/settings">
             <Card css={styles.card} size="sm">
               <CardBody>
                 <HStack justifyContent="space-between">
                   <HStack spacing={4}>
                     <Avatar name="Sukh Singh" />
                     <Box>
-                      <LinkOverlay href="#">
-                        <Heading as="h1" size="sm">
-                          TON Space
-                        </Heading>
-                      </LinkOverlay>
+                      <Heading as="h1" size="sm">
+                        TON Space
+                      </Heading>
                       <Text css={styles.hint} as="p">
                         This is a card
                       </Text>
@@ -72,7 +69,7 @@ function App() {
                 </HStack>
               </CardBody>
             </Card>
-          </LinkBox>
+          </Link>
           <Button onClick={onClick} css={styles.button}>
             Click me
           </Button>
@@ -82,5 +79,3 @@ function App() {
     </main>
   );
 }
-
-export default App;
