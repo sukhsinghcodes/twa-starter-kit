@@ -1,47 +1,19 @@
-import Twa from '@twa-dev/sdk';
+import { CardBody, Card as ChakraCard } from '@chakra-ui/react';
 import { css } from '@emotion/react';
-import {
-  CardBody,
-  HStack,
-  Avatar,
-  Heading,
-  Icon,
-  Card as ChakraCard,
-  Box,
-  Text,
-} from '@chakra-ui/react';
-import { IoChevronForward } from 'react-icons/io5';
 
-const styles = {
-  // TODO: Move these into theme
-  card: css`
-    background-color: ${Twa.themeParams.bg_color};
-    border-radius: 1rem;
-  `,
-  hint: css`
-    color: ${Twa.themeParams.hint_color};
-  `,
+const styles = css`
+  border-radius: 1rem;
+  min-height: 72px;
+`;
+
+type CardProps = {
+  children: React.ReactNode;
 };
 
-export function Card() {
+export function Card({ children }: CardProps) {
   return (
-    <ChakraCard css={styles.card} size="sm">
-      <CardBody>
-        <HStack justifyContent="space-between">
-          <HStack spacing={4}>
-            <Avatar name="Sukh Singh" />
-            <Box>
-              <Heading as="h1" size="sm">
-                TON Space
-              </Heading>
-              <Text css={styles.hint} as="p">
-                This is a card
-              </Text>
-            </Box>
-          </HStack>
-          <Icon as={IoChevronForward} boxSize={8} />
-        </HStack>
-      </CardBody>
+    <ChakraCard size="sm" css={styles}>
+      <CardBody>{children}</CardBody>
     </ChakraCard>
   );
 }

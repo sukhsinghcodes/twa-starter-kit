@@ -5,7 +5,7 @@ import {
   Avatar,
   Box,
   Button,
-  Card,
+  Card as ChakraCard,
   CardBody,
   Container,
   HStack,
@@ -17,6 +17,10 @@ import {
 import { MainButton } from '@twa-dev/sdk/react';
 import { IoChevronForward } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
+import { Card } from '../components/Card';
+import { DataDisplayItem } from '../components';
+
+console.log(Twa.themeParams);
 
 const styles = {
   main: css`
@@ -51,7 +55,20 @@ export function Root() {
       <Container pt={4}>
         <VStack spacing={4} alignItems="stretch">
           <Link to="/settings">
-            <Card css={styles.card} size="sm">
+            <Card>
+              <DataDisplayItem
+                StartTextSlot={
+                  <Box>
+                    <Text variant="h3">Card title</Text>
+                    <Text variant="hint">This is a card.</Text>
+                  </Box>
+                }
+                StartIconSlot={<Avatar name="C C" />}
+              />
+            </Card>
+          </Link>
+          <Link to="/settings">
+            <ChakraCard css={styles.card} size="sm">
               <CardBody>
                 <HStack justifyContent="space-between">
                   <HStack spacing={4}>
@@ -68,7 +85,7 @@ export function Root() {
                   <Icon as={IoChevronForward} boxSize={8} />
                 </HStack>
               </CardBody>
-            </Card>
+            </ChakraCard>
           </Link>
           <Button onClick={onClick} css={styles.button}>
             Click me

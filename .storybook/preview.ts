@@ -13,6 +13,9 @@ const preview: Preview = {
     chakra: {
       theme,
     },
+    viewport: {
+      defaultViewport: 'mobile2',
+    },
   },
 };
 
