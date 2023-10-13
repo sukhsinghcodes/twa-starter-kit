@@ -5,6 +5,10 @@ type ButtonProps = ChakraButtonProps & {
   children: React.ReactNode;
 };
 
-export function Button({ children, variant = 'primary' }: ButtonProps) {
-  return <ChakraButton variant={variant}>{children}</ChakraButton>;
+export function Button({ children, variant = 'primary', ...rest }: ButtonProps) {
+  return (
+    <ChakraButton {...rest} variant={variant}>
+      {children}
+    </ChakraButton>
+  );
 }
