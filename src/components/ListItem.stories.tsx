@@ -24,7 +24,7 @@ export const Assets: Story = {
           StartIconSlot={<Avatar icon={<Icon as={FaEthereum} fontSize={28} />} bgColor="#A7117A" />}
           StartTextSlot={
             <Box>
-              <Heading as="h3" size="sm">
+              <Heading as="h3" variant="bodyTitle">
                 Ethereum
               </Heading>
               <Text variant="hint">0.003 ETH</Text>
@@ -38,7 +38,7 @@ export const Assets: Story = {
           }
           StartTextSlot={
             <Box>
-              <Heading as="h3" size="sm">
+              <Heading as="h3" variant="bodyTitle">
                 USD Coin
               </Heading>
               <Text variant="hint">5 USDC</Text>
@@ -49,7 +49,7 @@ export const Assets: Story = {
           StartIconSlot={<Avatar icon={<Icon as={LuBitcoin} fontSize={28} />} bgColor="#f2a900" />}
           StartTextSlot={
             <Box>
-              <Heading as="h3" size="sm">
+              <Heading as="h3" variant="bodyTitle">
                 Bitcoin
               </Heading>
               <Text variant="hint">0.00003 BTC</Text>
@@ -72,7 +72,7 @@ export const Transactions: Story = {
           }
           StartTextSlot={
             <Box>
-              <Heading as="h3" size="sm">
+              <Heading as="h3" variant="bodyTitle">
                 Sukh
               </Heading>
               <Text variant="hint">October 12 at 2:05 PM</Text>
@@ -80,7 +80,7 @@ export const Transactions: Story = {
           }
           EndTextSlot={
             <Box style={{ textAlign: 'right' }}>
-              <Heading as="h3" size="sm">
+              <Heading as="h3" variant="bodyTitle">
                 0.5 MATIC
               </Heading>
               <Text variant="hint">Sent</Text>
@@ -93,7 +93,7 @@ export const Transactions: Story = {
           }
           StartTextSlot={
             <Box>
-              <Heading as="h3" size="sm">
+              <Heading as="h3" variant="bodyTitle">
                 Sukh
               </Heading>
               <Text variant="hint">October 12 at 2:01 PM</Text>
@@ -101,7 +101,7 @@ export const Transactions: Story = {
           }
           EndTextSlot={
             <Box style={{ color: 'green', textAlign: 'right' }}>
-              <Heading as="h3" size="sm">
+              <Heading as="h3" variant="bodyTitle">
                 +0.15 MATIC
               </Heading>
               <Text as="small">Received</Text>

@@ -16,6 +16,7 @@
     "@emotion/babel-plugin": "^11.11.0",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "@fontsource/inter": "^5.0.13",
     "@twa-dev/sdk": "^6.9.0",
     "framer-motion": "^10.16.4",
     "localforage": "^1.10.0",

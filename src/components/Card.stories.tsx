@@ -18,7 +18,7 @@ export const Title: Story = {
     children: (
       <DataDisplayItem
         StartTextSlot={
-          <Heading as="h3" size="sm">
+          <Heading as="h3" variant="bodyTitle">
             Card title
           </Heading>
         }
@@ -33,7 +33,7 @@ export const TitleAndSub: Story = {
       <DataDisplayItem
         StartTextSlot={
           <Box>
-            <Heading as="h3" size="sm">
+            <Heading as="h3" variant="bodyTitle">
               Card title
             </Heading>
             <Text variant="hint">This is a card</Text>
@@ -51,7 +51,7 @@ export const SmallTitleAndSub: Story = {
         StartTextSlot={
           <Box>
             <Text variant="hint">Card title</Text>
-            <Heading as="h3" size="sm">
+            <Heading as="h3" variant="bodyTitle">
               This is a card
             </Heading>
           </Box>
@@ -67,7 +67,7 @@ export const TitleWithIcon: Story = {
       <DataDisplayItem
         StartIconSlot={<Avatar name="Card title" />}
         StartTextSlot={
-          <Heading as="h3" size="sm">
+          <Heading as="h3" variant="bodyTitle">
             Card title
           </Heading>
         }
@@ -83,7 +83,7 @@ export const TitleAndSubWithIcon: Story = {
         StartIconSlot={<Avatar name="Card title" />}
         StartTextSlot={
           <Box>
-            <Heading as="h3" size="sm">
+            <Heading as="h3" variant="bodyTitle">
               Card title
             </Heading>
             <Text variant="hint">This is a card</Text>
@@ -102,7 +102,7 @@ export const SmallTitleAndSubWithIcon: Story = {
         StartTextSlot={
           <Box>
             <Text variant="hint">Card title</Text>
-            <Heading as="h3" size="sm">
+            <Heading as="h3" variant="bodyTitle">
               This is a card
             </Heading>
           </Box>
@@ -119,14 +119,14 @@ export const Currency: Story = {
         StartIconSlot={<Avatar icon={<Icon as={FaEthereum} fontSize={28} />} bgColor="#A7117A" />}
         StartTextSlot={
           <Box>
-            <Heading as="h3" size="sm">
+            <Heading as="h3" variant="bodyTitle">
               Ethereum
             </Heading>
             <Text variant="hint">0.003 ETH</Text>
           </Box>
         }
         EndTextSlot={
-          <Heading as="h3" size="sm">
+          <Heading as="h3" variant="bodyTitle">
             $4.63
           </Heading>
         }

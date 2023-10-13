@@ -14,7 +14,7 @@ type Story = StoryObj<typeof meta>;
 export const Title: Story = {
   args: {
     StartTextSlot: (
-      <Heading as="h3" size="sm">
+      <Heading as="h3" variant="bodyTitle">
         Title
       </Heading>
     ),
@@ -25,7 +25,7 @@ export const TitleAndSub: Story = {
   args: {
     StartTextSlot: (
       <Box>
-        <Heading as="h3" size="sm">
+        <Heading as="h3" variant="bodyTitle">
           Title
         </Heading>
         <Text variant="hint">This would be information</Text>
@@ -39,7 +39,7 @@ export const SmallTitleAndSub: Story = {
     StartTextSlot: (
       <Box>
         <Text variant="hint">Small title</Text>
-        <Heading as="h3" size="sm">
+        <Heading as="h3" variant="bodyTitle">
           This looks like the primary
         </Heading>
       </Box>
@@ -51,7 +51,7 @@ export const TitleWithIcon: Story = {
   args: {
     StartIconSlot: <Avatar name="Card title" />,
     StartTextSlot: (
-      <Heading as="h3" size="sm">
+      <Heading as="h3" variant="bodyTitle">
         Title
       </Heading>
     ),
@@ -63,7 +63,7 @@ export const TitleAndSubWithIcon: Story = {
     StartIconSlot: <Avatar name="Card title" />,
     StartTextSlot: (
       <Box>
-        <Heading as="h3" size="sm">
+        <Heading as="h3" variant="bodyTitle">
           Title
         </Heading>
         <Text variant="hint">This would be information</Text>
@@ -78,7 +78,7 @@ export const SmallTitleAndSubWithIcon: Story = {
     StartTextSlot: (
       <Box>
         <Text variant="hint">Title</Text>
-        <Heading as="h3" size="sm">
+        <Heading as="h3" variant="bodyTitle">
           This looks like the primary
         </Heading>
       </Box>

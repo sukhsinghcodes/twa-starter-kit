@@ -34,9 +34,13 @@ const config: ThemeConfig = {
 
 export const theme = extendTheme({
   config,
+  fonts: {
+    heading: `'Inter', sans-serif`,
+    body: `'Inter', sans-serif`,
+  },
   styles: {
     global: (props: StyleFunctionProps) => ({
-      'html, body': {
+      body: {
         color:
           Twa.themeParams.text_color ||
           mode(tgColors.light.text_color, tgColors.dark.text_color)(props),
@@ -52,6 +56,14 @@ export const theme = extendTheme({
     }),
   },
   components: {
+    Heading: defineStyleConfig({
+      variants: {
+        bodyTitle: {
+          fontSize: '1rem',
+          fontWeight: 'medium',
+        },
+      },
+    }),
     Card: defineStyleConfig({
       baseStyle: {
         backgroundColor: (props) =>
