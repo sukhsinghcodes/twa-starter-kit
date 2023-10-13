@@ -1,6 +1,7 @@
 import { StyleFunctionProps, ThemeConfig, defineStyleConfig, extendTheme } from '@chakra-ui/react';
 import { mode } from '@chakra-ui/theme-tools';
 import Twa from '@twa-dev/sdk';
+import { adjustBrightness } from './utils';
 
 // Telegram theme colours as of 09/10/2023
 export const tgColors = {
@@ -78,6 +79,47 @@ export const theme = extendTheme({
             mode(tgColors.light.hint_color, tgColors.dark.hint_color)(props),
           fontSize: '0.875rem',
         },
+      },
+    }),
+    Button: defineStyleConfig({
+      defaultProps: {
+        size: 'lg',
+      },
+      baseStyle: {
+        width: '100%',
+        borderRadius: '0.875rem',
+      },
+      variants: {
+        primary: (props) => ({
+          backgroundColor:
+            Twa.themeParams.button_color ||
+            mode(tgColors.light.button_color, tgColors.dark.button_color)(props),
+          color:
+            Twa.themeParams.button_text_color ||
+            mode(tgColors.light.button_text_color, tgColors.dark.button_text_color)(props),
+          _hover: {
+            backgroundColor: adjustBrightness(
+              Twa.themeParams.button_color ||
+                mode(tgColors.light.button_color, tgColors.dark.button_color)(props),
+              -0.07
+            ),
+          },
+          fontSize: '1rem',
+        }),
+        secondary: (props) => ({
+          backgroundColor: 'transparent',
+          fontSize: '1rem',
+          color:
+            Twa.themeParams.button_color ||
+            mode(tgColors.light.button_color, tgColors.dark.button_color)(props),
+          _hover: {
+            color: adjustBrightness(
+              Twa.themeParams.button_color ||
+                mode(tgColors.light.button_color, tgColors.dark.button_color)(props),
+              -0.1
+            ),
+          },
+        }),
       },
     }),
   },
