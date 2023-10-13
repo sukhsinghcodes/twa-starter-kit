@@ -26,6 +26,16 @@ export const tgColors = {
   },
 };
 
+export const colors = {
+  bg_color: Twa.themeParams.bg_color || tgColors.light.bg_color,
+  button_color: Twa.themeParams.button_color || tgColors.light.button_color,
+  button_text_color: Twa.themeParams.button_text_color || tgColors.light.button_text_color,
+  hint_color: Twa.themeParams.hint_color || tgColors.light.hint_color,
+  link_color: Twa.themeParams.link_color || tgColors.light.link_color,
+  secondary_bg_color: Twa.themeParams.secondary_bg_color || tgColors.light.secondary_bg_color,
+  text_color: Twa.themeParams.text_color || tgColors.light.text_color,
+};
+
 console.log('color mode', Twa.colorScheme);
 
 const config: ThemeConfig = {
@@ -109,6 +119,22 @@ export const theme = extendTheme({
         secondary: (props) => ({
           backgroundColor: 'transparent',
           fontSize: '1rem',
+          color:
+            Twa.themeParams.button_color ||
+            mode(tgColors.light.button_color, tgColors.dark.button_color)(props),
+          _hover: {
+            color: adjustBrightness(
+              Twa.themeParams.button_color ||
+                mode(tgColors.light.button_color, tgColors.dark.button_color)(props),
+              -0.1
+            ),
+          },
+        }),
+        icon: (props) => ({
+          padding: '0.5rem',
+          width: 'auto',
+          height: 'auto',
+          fontSize: '0.875rem',
           color:
             Twa.themeParams.button_color ||
             mode(tgColors.light.button_color, tgColors.dark.button_color)(props),
