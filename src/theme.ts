@@ -1,6 +1,13 @@
 import { StyleFunctionProps, ThemeConfig, defineStyleConfig, extendTheme } from '@chakra-ui/react';
 import { mode } from '@chakra-ui/theme-tools';
 import Twa from '@twa-dev/sdk';
+import { inputAnatomy } from '@chakra-ui/anatomy';
+import { createMultiStyleConfigHelpers } from '@chakra-ui/react';
+
+const { definePartsStyle, defineMultiStyleConfig } = createMultiStyleConfigHelpers(
+  inputAnatomy.keys
+);
+
 import { adjustBrightness } from './utils';
 
 // Telegram theme colours as of 09/10/2023
@@ -37,6 +44,26 @@ export const colors = {
 };
 
 console.log('color mode', Twa.colorScheme);
+
+const filled = definePartsStyle({
+  field: {
+    backgroundColor: Twa.themeParams.bg_color || tgColors.light.bg_color,
+    borderRadius: '0.875rem',
+    _hover: {
+      backgroundColor: adjustBrightness(Twa.themeParams.bg_color || tgColors.light.bg_color, -0.07),
+    },
+    _dark: {
+      backgroundColor: Twa.themeParams.bg_color || tgColors.light.bg_color,
+    },
+  },
+});
+
+export const inputTheme = defineMultiStyleConfig({
+  defaultProps: {
+    variant: 'filled',
+  },
+  variants: { filled },
+});
 
 const config: ThemeConfig = {
   initialColorMode: Twa.colorScheme,
@@ -148,5 +175,6 @@ export const theme = extendTheme({
         }),
       },
     }),
+    Input: inputTheme,
   },
 });
