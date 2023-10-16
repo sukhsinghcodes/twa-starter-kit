@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { IconButton } from './IconButton';
+import { IconButtonWithLabel } from './IconButtonWithLabel';
 import { BiSolidDownArrowCircle } from 'react-icons/bi';
 
 const meta = {
-  title: 'TWA/IconButton',
-  component: IconButton,
-} satisfies Meta<typeof IconButton>;
+  title: 'TWA/IconButtonWithLabel',
+  component: IconButtonWithLabel,
+} satisfies Meta<typeof IconButtonWithLabel>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

@@ -2,13 +2,13 @@ import { VStack, Text, Icon as IconWrapper, Button } from '@chakra-ui/react';
 import { colors } from '../theme';
 import { IconType } from 'react-icons';
 
-type IconButtonProps = {
+type IconButtonWithLabelProps = {
   Icon: IconType;
   label: string;
   onClick?: () => void;
 };
 
-export function IconButton({ Icon, label, onClick }: IconButtonProps) {
+export function IconButtonWithLabel({ Icon, label, onClick }: IconButtonWithLabelProps) {
   console.log(colors);
 
   return (
