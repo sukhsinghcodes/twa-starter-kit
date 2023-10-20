@@ -116,7 +116,7 @@ export const Currency: Story = {
   args: {
     children: (
       <DataDisplayItem
-        StartIconSlot={<Avatar icon={<Icon as={FaEthereum} fontSize={28} />} bgColor="#A7117A" />}
+        StartIconSlot={<Avatar icon={<Icon as={FaEthereum} fontSize={28} />} bgColor="#627EEA" />}
         StartTextSlot={
           <Box>
             <Heading as="h3" variant="bodyTitle">
