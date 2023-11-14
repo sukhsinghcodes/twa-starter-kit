@@ -23,7 +23,7 @@ export function hexToRgba(hex: string, alpha: number): string {
   return `rgba(${rgb[0]}, ${rgb[1]}, ${rgb[2]}, ${alpha})`;
 }
 
-export function adjustBrightness(hex: string, brightness: number = 0): string {
+export function adjustBrightness(hex: string, brightness = 0): string {
   const rgb = hexToRgbArray(hex);
   const increment = Math.round(brightness * 255);
 

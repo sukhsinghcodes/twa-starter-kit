@@ -1,20 +1,17 @@
-import { css } from '@emotion/react';
+import { css, SerializedStyles } from '@emotion/react';
 import { DataDisplayItem } from './DataDisplayItem';
-import { Box, Icon, useColorMode } from '@chakra-ui/react';
-import { AiOutlineCheck } from 'react-icons/ai';
-import { tgColors } from '../theme';
+import { Icon, useColorMode } from '@chakra-ui/react';
+import { BiCheck } from 'react-icons/bi';
+
+import { colors, tgColors } from '../theme';
+import { Card } from './Card';
 
 const styles = css`
-  padding: 1rem 0;
-
-  &:first-child {
-    padding-top: 0;
-  }
-  &:last-child {
-    padding-bottom: 0;
-  }
-  :not(:last-child) {
-    border-bottom: 1px solid #e5e7eb;
+  width: 100%;
+  color: ${colors.text_color};
+  min-height: unset;
+  &:last-child:after {
+    display: none;
   }
 `;
 
@@ -24,6 +21,9 @@ type ListItemProps = {
   StartIconSlot?: React.ReactNode;
   EndIconSlot?: React.ReactNode;
   selected?: boolean;
+  onClick?: () => void;
+  css?: SerializedStyles | undefined;
+  dataDisplayItemCss?: SerializedStyles | undefined;
 };
 
 export function ListItem({
@@ -32,23 +32,27 @@ export function ListItem({
   EndTextSlot,
   EndIconSlot,
   selected,
+  onClick,
+  css,
+  dataDisplayItemCss,
 }: ListItemProps) {
   const mode = useColorMode();
 
   return (
-    <Box css={styles}>
+    <Card css={[styles, css]} onClick={onClick}>
       <DataDisplayItem
+        css={dataDisplayItemCss}
         StartIconSlot={StartIconSlot}
         StartTextSlot={StartTextSlot}
         EndTextSlot={
           selected ? (
-            <Icon as={AiOutlineCheck} color={tgColors[mode.colorMode].button_color} />
+            <Icon as={BiCheck} color={tgColors[mode.colorMode].button_color} />
           ) : (
             EndTextSlot
           )
         }
         EndIconSlot={EndIconSlot}
       />
-    </Box>
+    </Card>
   );
 }

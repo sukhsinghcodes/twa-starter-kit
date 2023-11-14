@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import Twa from '@twa-dev/sdk';
-import { css } from '@emotion/react';
 import {
   Avatar,
   Box,
@@ -19,27 +18,6 @@ import { IoChevronForward } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
 import { Card } from '../components/Card';
 import { DataDisplayItem } from '../components';
-
-console.log(Twa.themeParams);
-
-const styles = {
-  main: css`
-    background-color: ${Twa.themeParams.secondary_bg_color};
-    color: ${Twa.themeParams.text_color};
-  `,
-  // TODO: Move these into theme
-  card: css`
-    background-color: ${Twa.themeParams.bg_color};
-    border-radius: 1rem;
-  `,
-  button: css`
-    background-color: ${Twa.themeParams.button_color};
-    color: ${Twa.themeParams.button_text_color};
-  `,
-  hint: css`
-    color: ${Twa.themeParams.hint_color};
-  `,
-};
 
 function onClick() {
   Twa.showAlert('Hello, world!');
@@ -68,7 +46,7 @@ export function Root() {
             </Card>
           </Link>
           <Link to="/settings">
-            <ChakraCard css={styles.card} size="sm">
+            <ChakraCard size="sm">
               <CardBody>
                 <HStack justifyContent="space-between">
                   <HStack spacing={4}>
@@ -77,9 +55,7 @@ export function Root() {
                       <Heading as="h1" size="sm">
                         TON Space
                       </Heading>
-                      <Text css={styles.hint} as="p">
-                        This is a card
-                      </Text>
+                      <Text as="p">This is a card</Text>
                     </Box>
                   </HStack>
                   <Icon as={IoChevronForward} boxSize={8} />
@@ -87,9 +63,7 @@ export function Root() {
               </CardBody>
             </ChakraCard>
           </Link>
-          <Button onClick={onClick} css={styles.button}>
-            Click me
-          </Button>
+          <Button onClick={onClick}>Click me</Button>
         </VStack>
       </Container>
       <MainButton onClick={onClick} text="Click me" />

@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { IconButtonWithLabel } from './IconButtonWithLabel';
 import { BiSolidDownArrowCircle } from 'react-icons/bi';
+import { Icon } from '@chakra-ui/react';
 
 const meta = {
   title: 'TWA/IconButtonWithLabel',
@@ -13,7 +14,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Simple: Story = {
   args: {
-    Icon: BiSolidDownArrowCircle,
+    IconSlot: <Icon as={BiSolidDownArrowCircle} fontSize="2xl" color="inherit" />,
     label: 'Deposit',
     onClick: () => {
       console.log('clicked');

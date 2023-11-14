@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Input } from '@chakra-ui/react';
+import { Input as Comp } from '@chakra-ui/react';
 import { StoryWrapper } from '../stories/StoryWrapper';
 
 const meta = {
@@ -11,8 +11,9 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Typography: Story = {
+export const Input: Story = {
   args: {
-    children: <Input placeholder="Placeholder text..." />,
+    children: <Comp placeholder="Placeholder text..." />,
+    bgColor: 'bg_color',
   },
 };
