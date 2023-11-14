@@ -6,7 +6,7 @@ import { FaEthereum } from 'react-icons/fa';
 import { BiDollarCircle } from 'react-icons/bi';
 import { LuBitcoin } from 'react-icons/lu';
 import { ListItem } from './ListItem';
-import { Card } from './Card';
+import { List } from './List';
 
 const meta = {
   title: 'TWA/ListItem',
@@ -19,7 +19,7 @@ type Story = StoryObj<typeof meta>;
 export const Assets: Story = {
   args: {
     children: (
-      <Card>
+      <List mode="display">
         <ListItem
           StartIconSlot={<Avatar icon={<Icon as={FaEthereum} fontSize={28} />} bgColor="#A7117A" />}
           StartTextSlot={
@@ -56,7 +56,7 @@ export const Assets: Story = {
             </Box>
           }
         />
-      </Card>
+      </List>
     ),
   },
 };
@@ -64,8 +64,10 @@ export const Assets: Story = {
 export const Transactions: Story = {
   args: {
     children: (
-      <Card>
-        <Text variant="hint">TRANSACTION HISTORY</Text>
+      <List mode="select">
+        <Box p={3}>
+          <Text variant="hint">TRANSACTION HISTORY</Text>
+        </Box>
         <ListItem
           StartIconSlot={
             <Avatar src="https://pbs.twimg.com/profile_images/1601531707072675841/TmRVWuA0_400x400.jpg" />
@@ -108,7 +110,7 @@ export const Transactions: Story = {
             </Box>
           }
         />
-      </Card>
+      </List>
     ),
   },
 };
