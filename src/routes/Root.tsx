@@ -1,18 +1,6 @@
 import { useEffect } from 'react';
 import Twa from '@twa-dev/sdk';
-import {
-  Avatar,
-  Box,
-  Button,
-  Card as ChakraCard,
-  CardBody,
-  Container,
-  HStack,
-  Heading,
-  Icon,
-  Text,
-  VStack,
-} from '@chakra-ui/react';
+import { Avatar, Box, Button, Container, Heading, Icon, Text, VStack } from '@chakra-ui/react';
 import { MainButton } from '@twa-dev/sdk/react';
 import { IoChevronForward } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
@@ -37,33 +25,35 @@ export function Root() {
               <DataDisplayItem
                 StartTextSlot={
                   <Box>
-                    <Text variant="h3">Card title</Text>
-                    <Text variant="hint">This is a card.</Text>
+                    <Heading as="h3" variant="bodyTitle">
+                      TON Space
+                    </Heading>
+                    <Text variant="hint">This would be information</Text>
                   </Box>
                 }
                 StartIconSlot={<Avatar name="C C" />}
+                EndIconSlot={<Icon as={IoChevronForward} />}
               />
             </Card>
           </Link>
           <Link to="/settings">
-            <ChakraCard size="sm">
-              <CardBody>
-                <HStack justifyContent="space-between">
-                  <HStack spacing={4}>
-                    <Avatar name="Sukh Singh" />
-                    <Box>
-                      <Heading as="h1" size="sm">
-                        TON Space
-                      </Heading>
-                      <Text as="p">This is a card</Text>
-                    </Box>
-                  </HStack>
-                  <Icon as={IoChevronForward} boxSize={8} />
-                </HStack>
-              </CardBody>
-            </ChakraCard>
+            <Card>
+              <DataDisplayItem
+                StartTextSlot={
+                  <Box>
+                    <Heading as="h3" variant="bodyTitle">
+                      Card Title
+                    </Heading>
+                  </Box>
+                }
+                StartIconSlot={<Avatar name="Sukh Singh" />}
+                EndIconSlot={<Icon as={IoChevronForward} />}
+              />
+            </Card>
           </Link>
-          <Button onClick={onClick}>Click me</Button>
+          <Button variant="primary" onClick={onClick}>
+            Click me
+          </Button>
         </VStack>
       </Container>
       <MainButton onClick={onClick} text="Click me" />
