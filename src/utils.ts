@@ -1,3 +1,5 @@
+import Twa from '@twa-dev/sdk';
+
 function hexToRgbArray(hex: string): number[] {
   const hexCode = hex.replace('#', '');
   const r = parseInt(hexCode.substring(0, 2), 16);
@@ -33,3 +35,5 @@ export function adjustBrightness(hex: string, brightness = 0): string {
 
   return rgbToHex(hexValues[0], hexValues[1], hexValues[2]);
 }
+
+export const isTwa = !!Twa.initData || !!new URLSearchParams(window.location.search).get('webapp');
