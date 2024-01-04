@@ -21,6 +21,5 @@ export const Default: Story = {
 export const Inverted: Story = {
   args: {
     children: <Comp placeholder="Placeholder text..." variant="inverted" />,
-    bgColor: 'bg_color',
   },
 };
