@@ -34,5 +34,5 @@ const ColorMode = () => {
     setColorMode(Twa.colorScheme);
   }, [setColorMode]);
 
-  return <div />;
+  return null;
 };
