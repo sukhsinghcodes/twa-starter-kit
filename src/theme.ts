@@ -196,6 +196,36 @@ export const theme = extendTheme({
             },
           },
         })),
+        inverted: definePartsStyle((props: StyleFunctionProps) => ({
+          field: {
+            backgroundColor: mode(colors.bg_color, colors.bg_color)(props),
+            borderRadius: '0.875rem',
+            _placeholder: {
+              color: mode(colors.hint_color, colors.hint_color)(props),
+            },
+            _hover: {
+              backgroundColor: adjustBrightness(
+                mode(colors.bg_color, colors.bg_color)(props),
+                -0.01
+              ),
+            },
+            _active: {
+              backgroundColor: adjustBrightness(
+                mode(colors.bg_color, colors.bg_color)(props),
+                -0.01
+              ),
+            },
+            _focus: {
+              backgroundColor: adjustBrightness(
+                mode(colors.bg_color, colors.bg_color)(props),
+                -0.01
+              ),
+            },
+            _dark: {
+              backgroundColor: mode(colors.bg_color, colors.bg_color)(props),
+            },
+          },
+        })),
       },
     }),
     Divider: defineStyleConfig({

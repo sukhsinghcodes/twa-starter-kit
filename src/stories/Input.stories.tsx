@@ -11,9 +11,16 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Input: Story = {
+export const Default: Story = {
   args: {
     children: <Comp placeholder="Placeholder text..." />,
+    bgColor: 'bg_color',
+  },
+};
+
+export const Inverted: Story = {
+  args: {
+    children: <Comp placeholder="Placeholder text..." variant="inverted" />,
     bgColor: 'bg_color',
   },
 };
